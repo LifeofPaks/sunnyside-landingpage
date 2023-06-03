@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600;800&family=Fraunces:wght@700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* =================================UTILITIES===================================== */
+:root{
+
+    /* =====================PRIMARY COLORS=============================== */
+--Soft-red: hsl(7, 99%, 70%);
+--Yellow: hsl(51, 100%, 49%);
+--Dark-desaturated-cyan : hsl(167, 40%, 24%);
+--Dark-blue: hsl(198, 62%, 26%);
+--Dark-moderate-cyan: hsl(168, 52%, 66%);
+
+/* =====================NUETRAL COLORS=============================== */
+--Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+--Very-dark-grayish-blue: hsl(213, 9%, 39%);
+--Dark-grayish-blue: hsl(232, 10%, 55%);
+--Grayish-blue: hsl(210, 4%, 67%);
+--White: hsl(0, 0%, 100%);
+
+/* =====================FONT FAMILY =============================== */
+--barlow: 'Barlow', sans-serif;
+--fraunces: 'Fraunces', serif;
+
+/* =====================FONT WEIGHT =============================== */
+--light-B : 200;
+--norwal-B: 400;
+--bold-B: 600;
+--very-bold-F: 700;
+--extra-bold-F: 900;
+
+}
+
+body{
+   font-family: var(--barlow);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+button, input{
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+.bigTitle,
+.smallTitle,
+.normalTitle{
+    font-family: var(--fraunces);
+}
+
+.normalTitle,
+.smallTitle{
+    font-weight: var(--very-bold-F);
+}
+
+.container{
+    max-width: 1440px;
+    width: 100%;
+}
+
+
+/* ===================================HOME SECTION====================================== */
+.homeSection{
+    background-image: url(images/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    padding: 40px 30px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.navLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.link {
+    color: var(--White);
+    font-weight: var(--bold-B);
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.contact{
+    text-transform: uppercase;
+    background: var(--White);
+    color: var(--Very-dark-desaturated-blue);
+    font-family: var(--fraunces);
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.contact:hover{
+    background: #ffffff30;
+    color: var(--White);
+}
+
+.menuToggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+.menuClose{
+    font-size: 30px;
+    color: var(--White);
+}
+
+.menuOpen,
+.menuClose{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.homeSectionDetail{
+    text-align: center;
+    margin-top: 7rem;
+}
+
+.homeSectionDetail .bigTitle{
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing:  10px;
+    color: var(--White);
+    margin-bottom: 5rem;
+}
+
+
+/* ===================================SERVICES SECTION====================================== */
+.servicesSection{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box{
+    display: grid;
+    place-content: center;
+}
+
+.boxContainer{
+    width: 400px;
+}
+
+.servicesSection .normalTitle{
+    font-size: 2.3rem;
+    color: var(--Very-dark-desaturated-blue);
+    margin-bottom: 2rem;
+}
+
+ .info{
+    color: var(--Very-dark-grayish-blue);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.boxOne .smallTitle,
+.boxFour .smallTitle{
+    color: var(--Very-dark-desaturated-blue);
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+.boxOne .smallTitle::before{
+    content: '';
+    width: 125px;
+    height: 7px;
+    border-radius: 5px;
+    background: transparent;
+    position: absolute;
+    left: -5px;
+    bottom: 2px;
+    z-index: -10;
+    transition: 0.2s;
+}
+
+.boxOne .smallTitle:hover::before{
+    background: var(--Yellow);
+}
+
+.boxFour .smallTitle::before{
+    content: '';
+    width: 125px;
+    height: 7px;
+    border-radius: 5px;
+    background: transparent;
+    position: absolute;
+    left: -5px;
+    bottom: 2px;
+    z-index: -10;
+    transition: 0.2s;
+}
+
+.boxFour .smallTitle:hover::before{
+    background: var(--Soft-red);
+}
+
+.relative{
+    position: relative;
+}
+
+.smallContainer{
+    position: absolute;
+    width: 350px;
+    top: 60%;
+    left: 50%;
+    transform: translate( -50%);
+    text-align: center;
+}
+
+.smallContainer .smallTitle{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--Dark-desaturated-cyan);
+}
+.smallContainer .info{
+    color: var(--Dark-desaturated-cyan);
+}
+
+
+/* ===================================CTA SECTION====================================== */
+
+.cta{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  min-height: 100vh;
+
+}
+
+.ctaContainer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+}
+
+.cta .normalTitle{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 4rem;
+}
+
+.ctaBox{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.person{
+    text-align: center;
+    padding: 50px;
+}
+
+.person img{
+    border-radius: 50%;
+    width: 80px;
+    margin-bottom: 4rem;
+}
+
+.person .smallTitle{
+    margin-bottom: 1rem;
+    color: var(--Very-dark-desaturated-blue);
+}
+
+
+.person small{
+    font-weight: var(--bold-B);
+    color: var(--Grayish-blue);
+}
+
+
+/* 
+PROJECT X FOOTER
+ */
+
+ .projectxfooter{
+    min-height: 100vh;
+    background: var(--Dark-moderate-cyan);
+ }
+
+/* ===================================PROJECT SECTION====================================== */
+
+ .projectSection{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+ }   
+
+ .projectSection img{
+    width:100%;
+ }
+
+
+/* ===================================FOOTER SECTION====================================== */
+.footer{
+    width: 100vw;
+    text-align: center;
+    
+}
+
+.footerHeader{
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 3rem;
+    color: var(--Dark-desaturated-cyan);
+    margin-bottom: 2rem;
+}
+
+.footerLinks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.footerLinks .link{
+    color: var(--Dark-desaturated-cyan);
+    transition: 0.2s;
+}
+
+.footerLinks .link:hover{
+    color: var(--White);
+}
+.footerIcons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footerIcons img:hover{
+    transition: 0.2s;
+}
+.footerIcons img:hover{
+    filter: brightness(100000%);
+}
+
+/* =====================FOR SMALL SCREEN========================== */
+@media (max-width: 600px){
+
+    .homeSection{
+        background-image: url(images/mobile/image-header.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .navLinks{
+       flex-direction: column;
+    }
+
+    .menuToggle.active,
+    .menuOpen.active{
+        display: block;
+    }
+
+    .servicesSection{
+        grid-template-columns: 1fr;
+    }
+
+    .servicesSection .box{
+        width: 25%;
+    }
+
+    .boxContainer{
+        width: 100%;
+        text-align: center;
+        padding: 8rem 3rem;
+    }
+
+    .servicesSection .normalTitle{
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        
+    }
+    
+     .info{
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .boxOne .smallTitle,
+    .boxFour .smallTitle{
+        font-size: 2rem;
+    }
+    
+    .smallContainer{
+        width: 100%;
+        padding: 0 2.5rem;
+    }
+
+    .smallContainer .smallTitle{
+        font-size: 4rem;
+    }
+
+      .ctaBox{
+        flex-direction: column;
+
+      }
+
+      .cta .normalTitle{
+        font-size: 1.8rem;
+    }
+    
+    .person img{
+        border-radius: 50%;
+        width: 100px;
+        margin-bottom: 3rem;
+    }
+    
+    .person .smallTitle{
+        font-size: 2rem;
+    }
+    
+    
+    .person small{
+        font-size: 1.3rem;
+    }
+    
+      .projectSection{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+
+
+}
+
+
