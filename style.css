@@ -52,6 +52,12 @@ li{
     list-style: none;
 }
 
+button{
+    outline: 0;
+    border: 0;
+    background: transparent;
+}
+
 .bigTitle,
 .smallTitle,
 .normalTitle{
